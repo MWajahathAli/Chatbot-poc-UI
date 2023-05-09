@@ -1,4 +1,5 @@
 import React from "react";
+import Api from "./Api";
 import './Options.css'
 
 const Options = ({props,actions}) =>{
@@ -6,11 +7,12 @@ const Options = ({props,actions}) =>{
     const options = [
         {
             text : "Finance",
-            handler : actions.Hello,
+            handler:() =>{
+                 actions.Hello();
+            },
             id : 1,
         },
-        {  text : "HR", handler:() =>{
-        }, id : 2 },
+        {  text : "HR", handler:() =>{}, id : 2 },
         { text : "Health",  handler:() =>{}, id : 3}
     ]
 

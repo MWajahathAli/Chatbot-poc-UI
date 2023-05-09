@@ -5,7 +5,6 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
         const message = createChatBotMessage("Here are the Questions",{
             widget: "Api"
         });
-        console.log("Hello")
         setState((prev) => ({
             ...prev,
             messages : [...prev.messages, message]

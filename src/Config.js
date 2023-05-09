@@ -1,12 +1,10 @@
 import { createChatBotMessage } from 'react-chatbot-kit';
-import App from './App';
 import Options from './Options';
-import Todos from './Todo';
 import Api from './Api';
 
 const config = {
   initialMessages: [createChatBotMessage(`Hello How Can I help you`,{
-    widget : "Api"
+    widget : "todos"
   })],
   botName : "Genie",
   state :{

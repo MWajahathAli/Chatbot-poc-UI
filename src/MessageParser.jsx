@@ -3,7 +3,7 @@ import React from 'react';
 const MessageParser = ({ children, actions }) => {
   const parse = (message) => {
     console.log(message);
-    actions.Hello();
+   // actions.Hello();
   };
 
   return (
