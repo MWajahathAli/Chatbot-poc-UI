@@ -3,18 +3,26 @@ import Options from './Options';
 import Api from './Api';
 
 const config = {
+
+
   initialMessages: [createChatBotMessage(`Hello How Can I help you`,{
     widget : "todos"
   })],
-  botName : "Genie",
+  botName : "HR Bot",
   state :{
-    todos :[]
+    Id:' hello',
+    todos :[],
+    cat:[],
   },
+
   widgets: [
     {
       widgetName: "todos",
       widgetFunc : (props) => <Options {...props}/>,
+      MapStateToProps:["Id"]
+    
     },
+
     {
         widgetName: "Api",
         widgetFunc : (props) => <Api {...props}/>,
@@ -25,3 +33,4 @@ const config = {
 };
 
 export default config;
+
