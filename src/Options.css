@@ -10,4 +10,25 @@
     border-color:#003D8C;
     background: transparent;
     text-align: center;
+    color: #000;
+  }
+
+  .option-button:hover{
+ margin: 5px;
+ transform: scale(1.05);
+     border-radius: 25px;
+     padding: 8px;
+     border-color:#003D8C;
+     background: transparent;
+     text-align: center;
+     border-style: solid;
+     color: #fff;
+     background-color: #003D8C;
+    }
+
+  .paragraph{
+    font-size: 16px;;
+    line-height: 1.5;
+   margin-top: 20px;
+    margin-bottom: 10px;
   }

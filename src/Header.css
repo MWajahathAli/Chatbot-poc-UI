@@ -1,0 +1,13 @@
+.header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.close{
+    position: absolute;
+    right: 18px;
+    color: #002E6B;
+    background-color: #002E6B;
+
+}
