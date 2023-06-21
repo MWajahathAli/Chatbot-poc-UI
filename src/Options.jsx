@@ -1,16 +1,11 @@
-import React from "react";
-import Api from "./Api";
+import React, { useState, useEffect } from "react";
 import './Options.css'
-import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
-import { useDispatch } from 'react-redux';
-import { login,catOption } from './user';
+import { useSelector, useDispatch } from "react-redux";
+import { login } from './user';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles'
-import MessageParser from './MessageParser'
-import { createClientMessage } from 'react-chatbot-kit';
 // 1st. argument is the text value, 2nd. argument is the name of the registered custom message.
 
 const Options = ({props,actions}) =>{
@@ -28,7 +23,7 @@ const Options = ({props,actions}) =>{
     
     const [opt,setOpt] = useState([]);
     const [show,setShow]=useState(false)
-    // const [id,setId] =useState();
+   
    
   useEffect(()=>{
     console.log("hello");
@@ -37,10 +32,9 @@ const Options = ({props,actions}) =>{
   
     const optHandle = async (data) => {
         dispatch(login({email: data.categoryId}));
-        // await dispatch(catOption({catoption: data.categoryName}));
-  
+       
        console.log(opt.length)
-        // setId((state) => ({...state, Id: id}));
+        
         actions.Hello(data.categoryName)
     }
 
@@ -74,23 +68,11 @@ const Options = ({props,actions}) =>{
             throw error;
           }
         } catch (e) {
-          // alert(`error: ${e.message}`);
+         
         }
     }
 
 
-
-    // const options = [
-    //     {
-    //         text : opt.map(categoryName => categoryName),
-    //         handler:() =>{
-    //              actions.Hello();
-    //         },
-    //         id : 1,
-    //     },
-    //     {  text : "HR", handler:() =>{}, id : 2 },
-    //     { text : "Health",  handler:() =>{}, id : 3}
-    // ]
 
     const buttonsmarkup = opt.map((Option) => (
         <button key={Option.categoryId}
@@ -116,7 +98,7 @@ const Options = ({props,actions}) =>{
                         s.questionsAndAnswers.map(data =>(
                           <div>
                             <button className = "option-button" key={data.id} onClick={()=>setShow(true)} > {data.question}</button>
-                            {show == true && (<div className="paragraph"><Box sx={{ width: '100%',color:'#000' }}>
+                            {show  && (<div className="paragraph"><Box sx={{ width: '100%',color:'#000' }}>
                              <Stack spacing={2}> <Item><div style={{color:'#000'}}><li >{data.answer}</li></div></Item> </Stack>
                            </Box> </div>)}
                             </div>

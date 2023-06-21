@@ -1,17 +1,6 @@
 import React from "react"
-import App from "./App"
 import "./Header.css"
-import {catOption } from './user';
-import { useSelector } from "react-redux";
-import { useDispatch } from 'react-redux';
 const Header = () => {
-
-    const dispatch = useDispatch();
-
-    const handler = (val) => {
-        dispatch(catOption({catoption:val }));
-    }
-
    
     return ( 
         <div>

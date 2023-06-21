@@ -1,6 +1,4 @@
-import React, { useState} from "react";
-import { useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from "react";
 
 const Api = (props) =>{
 
@@ -35,23 +33,17 @@ const Api = (props) =>{
             throw error;
           }
         } catch (e) {
-          // alert(`error: ${e.message}`);
+         
         }
     }
    
     useEffect(   () => {
-        //  fetch("http://localhost:8080/SubCat")
-        // .then((res) => res.json())
-        // .then((data) =>{
-        //     const five = data.slice(0,6)
-        //     setState((state) => ({...state, todos: five}));
-        // });
         initial();
         console.log(JSON.stringify(states));
       
     
     },[]);
-    //console.log(props.todos);
+    
     const renderTodos = () =>{
         if(typeof states.todos != 'undefined'){
             return states.todos.map(todo =>{

@@ -7,11 +7,9 @@ import Box from '@mui/material/Box';
 import Popper from '@mui/material/Popper';
 import './App.css';
 import { useEffect, useState } from 'react';
-import Uma from './Uma'
 import Fade from '@mui/material/Fade';
 import Paper from '@mui/material/Paper';
 import { useSelector } from "react-redux";
-import { useDispatch } from 'react-redux';
 
 function App() {
 
@@ -30,12 +28,12 @@ function App() {
   const val = useSelector((state) => state.user.value1);
 
 
-  const dispatch = useDispatch();
+  
 
   const handleClick = (newPlacement) => (event) => {
     setAnchorEl(event.currentTarget);
     setOpen((prev) => placement !== newPlacement || !prev);
-    // dispatch(catOption((prev) => placement !== newPlacement || !prev));
+    
     setPlacement(newPlacement);
   };
  
@@ -43,16 +41,7 @@ function App() {
     console.log(JSON.stringify(val))
   },[])
 
-  // const [anchorEl, setAnchorEl] = useState(null);
-
-  // const handleClick = (event) => {
-  //   setAnchorEl(anchorEl ? null : event.currentTarget);
-  // };
-
-  // const open = Boolean(anchorEl);
-  // const id = open ? 'simple-popper' : undefined;
-
-  const [showBot, toggleBot] = useState(false);
+ 
   return (
     
       <div className='app-chatbot-container'>
