@@ -1,6 +1,7 @@
 import React from "react";
 import BotAvatar from "./icon.svg";
 
+/* function for the creation of Bot Avatar*/
 const CoBotAvatar = () => {
   return (
     <div className="react-chatbot-kit-chat-bot-avatar">

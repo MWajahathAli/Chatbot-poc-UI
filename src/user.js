@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+/* create a slice of redux store */
 export const userSlice = createSlice({
 name: "user",
 initialState: { value: {email: 0},value1:{catoption:false}},

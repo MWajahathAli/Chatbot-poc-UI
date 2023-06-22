@@ -8,8 +8,8 @@ import Stack from '@mui/material/Stack';
 import { styled } from '@mui/material/styles'
 // 1st. argument is the text value, 2nd. argument is the name of the registered custom message.
 
+/* component for the getting the options from the backend */
 const Options = ({props,actions}) =>{
-
   const Item = styled(Paper)(({ theme }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
     ...theme.typography.body2,
@@ -32,13 +32,11 @@ const Options = ({props,actions}) =>{
   
     const optHandle = async (data) => {
         dispatch(login({email: data.categoryId}));
-       
-       console.log(opt.length)
-        
+       console.log(opt.length)        
         actions.Hello(data.categoryName)
     }
 
-
+    /*function to get the All sub categories */
     const initial= async () => {
         let url = `http://localhost:8080/cat/allSubCat`;
         let data ={
@@ -72,8 +70,6 @@ const Options = ({props,actions}) =>{
         }
     }
 
-
-
     const buttonsmarkup = opt.map((Option) => (
         <button key={Option.categoryId}
           onClick ={()=>optHandle(Option)} 
@@ -82,9 +78,6 @@ const Options = ({props,actions}) =>{
         </button>
       
     ))
-
-    
-
 
     return (
         <div className="options-container">
@@ -111,6 +104,4 @@ const Options = ({props,actions}) =>{
         </div>
     )
 }
-
-
 export default Options

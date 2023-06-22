@@ -1,18 +1,15 @@
 import React, { useState, useEffect } from "react";
 
+/* This component is to get the all the sub categories*/
 const Api = (props) =>{
-
     const [states,setState] = useState([]);
-
     const initial= async () => {
         let url = `http://localhost:8080/cat/allSubCat`;
         let data ={
             "categoryId":0
         }
-      
         try {
-          const rawResponse = await fetch(url, {
-            
+          const rawResponse = await fetch(url, {   
             method : 'POST',
             headers: {
                 Accept: 'application/json',
@@ -39,8 +36,7 @@ const Api = (props) =>{
    
     useEffect(   () => {
         initial();
-        console.log(JSON.stringify(states));
-      
+        console.log(JSON.stringify(states));      
     
     },[]);
     
@@ -60,7 +56,7 @@ const Api = (props) =>{
             renderTodos()
          }
         </div>
-   )
+  )
      
 }
 

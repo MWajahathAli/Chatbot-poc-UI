@@ -1,5 +1,6 @@
 import React from 'react';
 
+/* The message parser controls how the bot reads input and decides which action to invoke.*/
 const MessageParser = ({ children, actions }) => {
 
   const parse = (message) => {

@@ -27,13 +27,9 @@ function App() {
 
   const val = useSelector((state) => state.user.value1);
 
-
-  
-
   const handleClick = (newPlacement) => (event) => {
     setAnchorEl(event.currentTarget);
-    setOpen((prev) => placement !== newPlacement || !prev);
-    
+    setOpen((prev) => placement !== newPlacement || !prev);    
     setPlacement(newPlacement);
   };
  

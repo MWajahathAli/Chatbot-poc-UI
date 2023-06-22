@@ -7,6 +7,7 @@ import {configureStore} from "@reduxjs/toolkit"
 import { Provider } from 'react-redux'
 import user from './user'
 const root = ReactDOM.createRoot(document.getElementById('root'));
+/* to connect store to the App */
 const store = configureStore({
    reducer:{
      user
